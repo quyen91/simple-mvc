@@ -7,7 +7,7 @@
 		<li><a href="index.php?c=user&m=login">Login</a></li>
 		<li><a href="index.php?c=user&m=signup">Signup</a></li>
 		<?php
-	}elseif(isAdmin()){
+	}elseif(isAdmin()){ 
 		?>
 		<li><a href="index.php?c=admin&m=products">Quan li san pham</a>
 		</li>
@@ -15,7 +15,8 @@
 		<li><a href="index.php?c=user&m=logout">Logout</a></li>
 		<?php
 
-	}else{?>
+	}else{ ?>
+
 		<li><a href="index.php?c=user&m=logout">Logout</a></li>
 	
 	<?}?>

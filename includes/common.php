@@ -48,7 +48,7 @@ function isPostRequest(){
 }
 function isAdmin(){
     if(isset($_SESSION['logged'])){
-        return ($_SESSION['logged']['name']=='admin');
+        return ($_SESSION['logged']['user_name']=='admin');
     }
 }
 function redirect($url){
