@@ -3,7 +3,7 @@
 $host       = 'localhost';
 $user       = 'root';
 $password   = '';
-$db_name    = 'db';
+$db_name    = 'simple-mvc';
 
 mysql_connect($host, $user, $password, $db_name) or die('Can not connect database !');
 mysql_select_db($db_name);
@@ -46,15 +46,14 @@ function db_update($table, $data, $where) {
         $sets[] = "{$field} = '{$e_data[$field]}'";
     }
     
-    $sql = "UPDATE `{$table}` SET "  . implode(", ", $sets) . " WHERE {$where}";
+     $sql = "UPDATE `{$table}` SET "  . implode(", ", $sets) . " WHERE {$where}";
     mysql_query($sql);
-    
     return mysql_affected_rows();
 }
 
 
 function db_delete($table, $where) {
-    $sql = "DELETE FROM `{$table}` WHERE {$where}";
+ $sql = "DELETE FROM `{$table}` WHERE {$where}";
     mysql_query($sql);
     
     return mysql_affected_rows();

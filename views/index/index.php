@@ -7,3 +7,6 @@
     <li>Sử dụng jQuery và Bootstrap</li>
     <li>Tính kế thừa</li>
 </ol>
+<table width=”100%” border=”1″ cellspacing=”1″ cellpadding=”1″>
+<tr>sdsd</tr>
+</table>

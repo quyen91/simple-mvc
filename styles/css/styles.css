@@ -1,1 +1,66 @@
-/* Nothing here yet */
+
+.item-news{
+  float: left;
+
+}
+.news-content .big-img{
+	height: 350px;
+	width: 500px;
+}
+.row-contain{
+	margin-top: 30px;
+}
+.product img{
+	width: 860px;
+}
+.main-product .item-product{
+	height: 260px;
+	margin-bottom: 20px;
+	margin-left: 0;
+	margin-right: 10px;
+	display: block;
+	border-right: 0.1px solid rgb(231, 241, 237);
+}
+
+.main-nav .cart-nav{
+	float:right;
+}
+.item-product .desc{
+	display: block;
+}
+.item-product .left-desc{
+	float:left;
+	display: block;
+}
+.item-product .right-desc{
+	float:right;
+	display: block;
+	margin-right: 15px;
+
+}
+table{
+	margin-top: 10px;
+	
+}
+table tr td{
+	text-align: center;
+}
+.left-update{
+	
+}
+.row .span12{
+	margin-left: 0;
+}
+.btn2{
+
+	height: 30px;
+	width: 100px;
+	background-color: green;
+	border: none;
+	color: white;
+}
+.form-checkout p,input{
+	display: block;
+	float: left;
+}
+

@@ -29,4 +29,6 @@ class Model {
         
         return db_get_all($sql);
     }
+
+    
 }

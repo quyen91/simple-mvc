@@ -25,6 +25,14 @@ function isLogged() {
     
     return $_SESSION['logged'];
 }
+function isEmptyCart() {
+
+    if (empty($_SESSION['cart'])) {
+        return true;
+    }
+     return $_SESSION['cart'];
+}
+
 
 function render($file, $data) {
     extract($data);
@@ -33,4 +41,12 @@ function render($file, $data) {
     include ROOT . DS . 'views' . DS . $file;
     
     ob_end_flush();
+}
+
+function isPostRequest(){
+    return (strtolower($_SERVER['REQUEST_METHOD']) == 'post');
+}
+
+function redirect($url){
+    header("Location: ".$url);
 }
