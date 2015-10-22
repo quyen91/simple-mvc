@@ -1,10 +1,16 @@
 <?php
 function admin_products(){
-
-$data = array();
+	//check isAdmin
+	if(isAdmin()){
+		$data = array();
 $data['product'] = model('products')->get_product();
 $data['template_file'] = 'products/admin_sanpham.php';
   render('layout.php', $data);
+}else {
+		$data['template_file'] = 'user/error.php';
+		 render('layout.php', $data);
+}
+
 }
 function admin_updateProduct(){
 	  $id = $_GET['id'];
@@ -23,9 +29,9 @@ function admin_updateProduct(){
 			$path = 'styles/img/product/'.$_FILES['image']['name']; // Đường dẫn chưa file upload
 			move_uploaded_file($_FILES['image']['tmp_name'], $path);
 
-		}	
+		}
 
-		
+
 		//update vao co so du lieu
 		$where = "`id`=$id";
 		//var_dump($where);die();
@@ -49,7 +55,7 @@ function admin_addproduct(){
 		$edit['name_product'] = $_POST['name'];
 		$edit['price'] = $_POST['price'];
 		$edit['description'] = $_POST['description'];
-		
+
 
 		$edit['image'] = "styles/img/product/".$_FILES['image']['name'];
 			$path = 'styles/img/product/'.$_FILES['image']['name']; // Đường dẫn chưa file upload
@@ -61,10 +67,10 @@ function admin_addproduct(){
 
 	$data['template_file'] = 'products/addNewProduct.php';
   	render('layout.php', $data);
-  	
+
 	}
-	 
-	
+
+
 function admin_deleteProduct(){
 	$id = $_GET['id'];
 	 $where = "`id`=$id";
@@ -73,10 +79,21 @@ function admin_deleteProduct(){
 
 }
 function admin_news(){
+
+	//check isAdmin
+	if(isAdmin()){
+
+		$data = array();
 	$data = array();
 	$data['news'] = model('news')->get_post();
 	$data['template_file'] = 'news/admin_news.php';
 	 render('layout.php', $data);
+	}else{
+			$data['template_file'] = 'user/error.php';
+		 render('layout.php', $data);
+	
+	}
+
 }
 function admin_deleteNews(){
 	$id = $_GET['id'];
@@ -88,14 +105,14 @@ function admin_deleteNews(){
 function admin_updateNews(){
 	$id = $_GET['id'];
 	if(isPostRequest()){
-		
+
 		$edit = array();
 		$edit['ID'] = $_POST['ID'];
 		$edit['title'] = $_POST['title'];
 		$edit['author'] = $_POST['author'];
 		$edit['content'] = $_POST['content_'];
 		$edit['time'] = $_POST['time'];
-		
+
 		//upload image
 		if($_FILES['image']['name']==NULL){
 			$edit['figimage'] = $_POST['img-url'];
@@ -111,7 +128,7 @@ function admin_updateNews(){
 	 $t = db_update('news',$edit,$where);
 	redirect('index.php?c=news&m=mainpage');
 	}
-	
+
 	$data['news'] = model('news')->get_detail($id);
 	$data['template_file'] = 'news/update.php';
 	 render('layout.php', $data);
@@ -124,17 +141,17 @@ function admin_addnews(){
 		$edit['author'] = $_POST['author'];
 		$edit['content'] = $_POST['content_'];
 		$edit['time'] = $_POST['time'];
-		
+
 		//upload image
-		
+
 			$path = 'styles/img/news/'.$_FILES['image']['name']; // Đường dẫn chưa file upload
 			move_uploaded_file($_FILES['image']['tmp_name'], $path);
 			$edit['figimage'] = "styles/img/news/".$_FILES['image']['name'];
 		db_insert('news',$edit);
 		redirect('index.php?c=news&m=mainpage');
 }
-		
-	
+
+
 	$data['template_file'] = 'news/addNews.php';
 	 render('layout.php', $data);
 }
