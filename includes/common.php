@@ -46,7 +46,11 @@ function render($file, $data) {
 function isPostRequest(){
     return (strtolower($_SERVER['REQUEST_METHOD']) == 'post');
 }
-
+function isAdmin(){
+    if(isset($_SESSION['logged'])){
+        return ($_SESSION['logged']['name']=='admin');
+    }
+}
 function redirect($url){
     header("Location: ".$url);
 }
