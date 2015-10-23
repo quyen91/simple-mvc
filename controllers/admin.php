@@ -45,7 +45,7 @@ function admin_updateProduct(){
 		$where = "`id`=$id";
 		//var_dump($where);die();
 		$t = db_update('products',$edit,$where);
-		redirect('index.php?c=products&m=mainpage');
+		redirect('index.php?c=admin&m=products');
 
 
 
@@ -73,7 +73,7 @@ function admin_addproduct(){
 			move_uploaded_file($_FILES['image']['tmp_name'], $path);
 
 			db_insert('products',$edit);
-			redirect('index.php?c=products&m=mainpage');
+			redirect('index.php?c=admin&m=products');
 
 		}
 

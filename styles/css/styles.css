@@ -87,4 +87,7 @@ span{
 #menu li:hover .menu-drop {
  display: block;
 }
+.pagination a{
+	padding:20px;
+}
 

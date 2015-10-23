@@ -18,11 +18,11 @@
 				</div>
 				<div class="desc">
 					<div class="left-desc">
-						<h4><a href="index.php?c=products&m=viewOnetype&id=<?echo $p['id']?>&name=<? echo $p['name']?>"> <? echo $p['name']?></a> </h4>
+						<h4><a href="index.php?c=products&m=pagination&type=<?echo $p['id']?>&name=<? echo $p['name']?>&page=1"> <? echo $p['name']?></a> </h4>
 						
 					</div>
 					<div class="right-desc">
-						<a href="index.php?c=products&m=viewOnetype&id=<?echo $p['id']?>&name=<? echo $p['name']?>"><button class="btn2" type="submit"> Xem chi tiet</button></a>
+						<a href="index.php?c=products&m=pagination&type=<?echo $p['id']?>&name=<? echo $p['name']?>&page=1"><button class="btn2" type="submit"> Xem chi tiet</button></a>
 					</div>
 				</div>
 			</div>

@@ -21,7 +21,7 @@ class Products extends Model
 		return db_get_all($sql);
 	}
 	public function get_product_bytype(){
-		$id = $_GET['id'];
+		$id = $_GET['type'];
 	    $sql = "select * from `{$this->table}` where `type`='$id'"; 
 
 		return db_get_all($sql);
@@ -41,6 +41,14 @@ class Products extends Model
 		return $result;
 
 	}
+
+	public function paginate($page, $per_page = 20, $where = '') {
+        //$page = abs($page) - 1;
+        $skip = ($page - 1) * $per_page;
+        $sql = "SELECT * FROM `{$this->table}` {$where} LIMIT {$per_page} OFFSET {$skip}";
+        
+        return db_get_all($sql);
+    }
 
 
 }

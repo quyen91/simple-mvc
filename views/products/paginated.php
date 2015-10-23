@@ -39,11 +39,10 @@
 <div class="pagination">
 	<ul>
 		<?
-		$t = ceil(count($product_all)/2);
-		$name = $_GET['name']; //ten cua muc san pham
-		$type_ = $product_all[0]['type'];
+		$t = ceil(count($product)/2);
+		$type_ = $product[0]['type'];
 		for($i=1;$i<=$t;$i++){
-			echo "<li><a href='index.php?c=products&m=pagination&page=$i&type=$type_&name=$name'>$i</a></li>";
+			echo "<li><a href='index.php?c=products&m=pagination&id=$i&type=$type_'>$i</a></li>";
 		}
 
 

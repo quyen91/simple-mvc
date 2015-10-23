@@ -45,10 +45,27 @@ function products_viewAlltype(){
 
 }
 function products_viewOnetype(){
+
+  //phan trang
+ 
+
+
   $data = array();
+   //var_dump($data['pagi']);die();
     $data['product'] = model('products')->get_product_bytype();
     $data['template_file'] = 'products/product_page.php';
     render('layout.php', $data);
 }
+function products_pagination(){
+    $page = $_GET['page'];
+     $id = $_GET['type'];
+    $where = "WHERE `type`=$id";
 
+    $data['product'] = model('products')->paginate($page,2,$where);
+    $data['product_all'] = model('products')->get_product_bytype();
+    //var_dump( $data['product_all']);die();
+    $data['template_file'] = 'products/product_page.php';
+    render('layout.php', $data);
+  }
  ?>
+}
