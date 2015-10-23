@@ -13,10 +13,17 @@
   <div class='container'>
     <div class='navbar navbar-inverse bg'>
       <div class='navbar-inner nav-collapse' style="height: auto;">
-        <ul class="main-nav nav">
+        <ul class="main-nav nav" id="menu">
             <li class="active" id="home"><a href="index.php">Trang chủ</a></li>
             <li id="news"><a href="index.php?c=news&m=mainpage">Tin tức</a></li>
-            <li id="products"><a href="index.php?c=products&m=mainpage">Sản phẩm</a></li>
+            <li id="products" ><a href="index.php?c=products&m=mainpage" >Sản phẩm <span class="caret"></span></a>
+                  <ul class="menu-drop">
+                    <li><a href="">ss</a></li>
+                    <li><a href="">ss</a></li>
+                    <li><a href="">ss</a></li>
+                  </ul>
+
+            </li>
             <li class="cart_nav"><a href="index.php?c=cart&m=view">Giỏ hàng(<?if(isset($_SESSION['cart'])) echo count($_SESSION['cart']); else echo 0;?>)</a> </li>
         </ul>
       </div>

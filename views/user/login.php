@@ -1,12 +1,12 @@
+<div class="form1">
+	<form action="" method="post">
+	<div class="form-group "><p class="span3">User Name</p><input class="span6" name="user_name" type="text"></div>
+	<div class="form-group"><p class="span3">Password</p><input class="span6" name="password" type="password"></div>
+	
 
-
-<form action="" method="post">
-	User Name
-	<input name="user_name" type="text">
-	<br/>
-	Password
-	<input name="password" type="password">
-	<br/>
-	<input type="submit" value="Login">
+	<input class="btn2" type="submit" value="Login">
 </form>
 	
+</div>
+
+

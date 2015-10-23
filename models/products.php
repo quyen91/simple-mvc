@@ -21,8 +21,7 @@ class Products extends Model
 			foreach($_SESSION['cart'] as $id => $sl){
 				$sql = "select * from `{$this->table}` where `id`='$id'";
 				$temp = db_get_all($sql);
-				$temp[0]['sl'] = $sl['qty'];
-				//var_dump($temp);die();
+				$temp[0]['sl'] = $sl['qty'];		
 				array_push($result,$temp);
 			}
 		}

@@ -6,13 +6,14 @@
     <td>Tên</td>
     <td>Số lượng</td>
     <td> Giá</td>
+    <td> </td>
   </tr>
   <? $sum_money=0; for($i=0;$i<count($cart);$i++){ ?>
   	<tr>
     <td><?echo $cart[$i][0]['id'];?></td>
     <td><?echo $cart[$i][0]['name_product'];?></td>
-     <td><input type="number" onkeyup="update_cart(this, <?echo $cart[$i][0]['id'];?>);" name="quality" value="<?echo $cart[$i][0]['sl']?>"/> 
-     <br><span class="qty_"><?echo $cart[$i][0]['sl'];?></span></td>
+     <td><input type="number" onkeyup="update_cart(this, <?echo $cart[$i][0]['id'];?>);" name="quality" value="<?echo abs($cart[$i][0]['sl'])?>"/> 
+     <br><span class="qty_"><?echo abs($cart[$i][0]['sl']);?></span></td>
     <td><?echo $cart[$i][0]['price'];?> <u>VND</u></td>
     <td><a href="index.php?c=cart&m=deleteOne&id=<?echo $cart[$i][0]['id']?>">Xóa</a>
     </td>

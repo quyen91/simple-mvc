@@ -12,7 +12,7 @@ function news_detailpage(){
 
 
 	 if(isPostRequest()){
-	 	date_default_timezone_set('Asia/Calcutta');
+	 	date_default_timezone_set('Asia/Ho_Chi_Minh');
 	 	$date1 = date("Y-m-d H:i:s");
 
 	 	$comment = array(

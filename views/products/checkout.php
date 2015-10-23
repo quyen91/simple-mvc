@@ -32,7 +32,7 @@
 <br>
 <br>
 <h4>Nhập thông tin của bạn</h4>
-<div class="form-checkout span12">
+<div class="form1 span12">
   <form class="" action="" method="post">
 <div class="form-group"> <p class="span3">Tên:</p> <input class="span6" type="text" name="name_customer" value=""></div>
 <div class="form-group"> <p class="span3">Email:</p> <input class="span6" type="email" name="email" value=""></div>

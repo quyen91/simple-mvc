@@ -1,5 +1,5 @@
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 
 <div class="main-update contain span12">
 	<div class="row span12">

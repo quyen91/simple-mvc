@@ -18,6 +18,10 @@
 		<div class="right-update span8"><input type="text" name="author" value="<?echo $news[0]['author']?>"></div>
 	</div>
 	<div class="row span12">
+		<div class="left-update span4">Mô tả</div>
+		<div class="right-update span8"><input type="text" name="slogan" value="<?echo $news[0]['slogan']?>"></div>
+	</div>
+	<div class="row span12">
 		<div class="left-update span4">Nội dung</div>
 		<div class="right-update span8"><textarea  name="content_" value=""><?echo $news[0]['content']?></textarea> </div>
 	</div>

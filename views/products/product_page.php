@@ -22,7 +22,7 @@
 						<h6><u> <? echo $p['price']?> VND</u> </h6>
 					</div>
 					<div class="right-desc">
-						<a href="index.php?c=cart&m=add&id=<?echo $p['id']?>&price=<?echo $p['price']?>"><button class="btn2" type="submit"> Cho vào giỏ</button></a>
+						<a href="index.php?c=cart&m=add&id=<?echo $p['id']?>"><button class="btn2" type="submit"> Cho vào giỏ</button></a>
 					</div>
 				</div>
 			</div>
