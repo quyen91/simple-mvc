@@ -17,7 +17,7 @@ function cart_add(){
 		//$_SESSION['cart'][$id]['price'] = $price;
 
 	}
-	redirect('index.php?c=products&m=mainpage');
+	redirect('index.php?c=products&m=viewAlltype');
 
 }
 function cart_deleteAll(){

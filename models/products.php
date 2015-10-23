@@ -5,6 +5,7 @@
 class Products extends Model
 {
 	public $table = 'products';
+	public $table_type = 'product_type';
 	public $primary_key = 'id';
 
 	public function get_product(){
@@ -13,6 +14,16 @@ class Products extends Model
 	}
 	public function get_product_byid($id){
 		$sql = "select * from `{$this->table}` where `id`='$id'";
+		return db_get_all($sql);
+	}
+	public function get_product_alltype(){
+		$sql = "select * from `{$this->table_type}`";
+		return db_get_all($sql);
+	}
+	public function get_product_bytype(){
+		$id = $_GET['id'];
+	    $sql = "select * from `{$this->table}` where `type`='$id'"; 
+
 		return db_get_all($sql);
 	}
 	public function get_product_session(){

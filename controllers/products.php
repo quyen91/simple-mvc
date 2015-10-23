@@ -34,11 +34,21 @@ function products_checkout(){
     $data['template_file'] = 'products/checkout.php';
     render('layout.php', $data);
 
+
   }
 }
-function products_bill(){
+function products_viewAlltype(){
+  $data = array();
+    $data['product'] = model('products')->get_product_alltype();
+    $data['template_file'] = 'products/alltype.php';
+    render('layout.php', $data);
 
 }
-
+function products_viewOnetype(){
+  $data = array();
+    $data['product'] = model('products')->get_product_bytype();
+    $data['template_file'] = 'products/product_page.php';
+    render('layout.php', $data);
+}
 
  ?>

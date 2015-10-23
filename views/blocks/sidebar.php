@@ -12,6 +12,7 @@
 		<li><a href="index.php?c=admin&m=products">Quan li san pham</a>
 		</li>
 		<li><a href="index.php?c=admin&m=news">Quan li bai dang</a></li>
+		<li><a href="index.php?c=checkout&m=view">Xem hóa đơn</a></li>
 		<li><a href="index.php?c=user&m=logout">Logout</a></li>
 		
 	

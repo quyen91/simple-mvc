@@ -8,9 +8,13 @@
 	<h5>Mô tả : </h5> <p> <?echo $product[0]['description'] ?></p>
 	<h5>Giá: </h5> <p><?echo $product[0]['price']?></p>
 	<h5>Tình trạng: </h5> <p><? if($product[0]['status']==1) echo "Còn hàng"; else echo "Hết hàng"; ?></p>
-	<p><a href="index.php?c=cart&m=add&id=<?echo $product[0]['id']?>&price=<?echo $product[0]['price']?>"><button class="btn2" type="submit"> Cho vào giỏ</button></a></p>
+	<p><a href="index.php?c=cart&m=add&id=<?echo $product[0]['id']?>"><button class="btn2" type="submit"> Cho vào giỏ</button></a></p>
 	</div>
 
 
 	
+</div>
+<div class="product-detail row span12">
+	<h2>Bài đánh giá tiêu biểu </h2>
+	<?echo $product[0]['content'] ?>
 </div>

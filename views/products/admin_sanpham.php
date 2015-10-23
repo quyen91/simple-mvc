@@ -8,6 +8,7 @@
 		<td colspan="" rowspan="" headers="">Số lượng</td>
 		<td colspan="" rowspan="" headers="">Ảnh</td>
 		<td colspan="" rowspan="" headers="">Mô tả</td>
+			<td colspan="" rowspan="" headers="">Loại</td>
 		<td></td>
 	</tr>
 	<?foreach ($product as $p) { ?>
@@ -18,6 +19,7 @@
 	   <td><?echo $p['status']?></td>
 	   <td><img width="300" height="200" src="<?echo $p['image']?>" alt=""></td>
 	   <td><?echo $p['description']?></td>
+	   <td><?echo $p['type']?></td>
 
 	   <td>
 	   <!-- tao action delete bang form -->

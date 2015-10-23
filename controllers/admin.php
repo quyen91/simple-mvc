@@ -26,7 +26,9 @@ function admin_updateProduct(){
 		$edit['id'] = $_POST['id'];
 		$edit['name_product'] = $_POST['name'];
 		$edit['price'] = $_POST['price'];
+		$edit['type'] = $_POST['type'];
 		$edit['description'] = $_POST['description'];
+		$edit['content'] = $_POST['content_'];
 		//img upload
 		if($_FILES['image']['name']==NULL){
 			$edit['image'] = $_POST['url-img'];
@@ -61,7 +63,9 @@ function admin_addproduct(){
 		$edit['id'] = $_POST['id'];
 		$edit['name_product'] = $_POST['name'];
 		$edit['price'] = $_POST['price'];
+		$edit['type'] = $_POST['type'];
 		$edit['description'] = $_POST['description'];
+		$edit['content'] = $_POST['content_'];
 
 
 		$edit['image'] = "styles/img/product/".$_FILES['image']['name'];
@@ -81,7 +85,7 @@ function admin_addproduct(){
 
 	function admin_deleteProduct($id){
 
-				//$id = $_GET['id'];
+	//$id = $_GET['id'];
 		$where = "`id`=$id";
 		db_delete('products',$where);
 		redirect('index.php?c=products&m=mainpage');

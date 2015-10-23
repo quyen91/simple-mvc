@@ -4,7 +4,7 @@
 		<img src="styles/img/product/banner_product.jpg" alt="">
 	</div>
 
-	<h3>Các sản phẩm thuộc danh mục <?echo $_GET['name']?></h3> <hr></hr>
+	<h3>Danh mục sản phẩm</h3> <hr></hr>
 	<div class="main-product">
 		<div class="row span12">
 			<? $i=0; foreach ($product as $p) {?>
@@ -14,15 +14,15 @@
 			}?>
 			<div class="item-product span4">
 				<div class="feture-item">
-					<img src="<? echo $p['image']?>" alt="">
+					<img src="<? echo $p['img']?>" alt="">
 				</div>
 				<div class="desc">
 					<div class="left-desc">
-						<h4><a href="index.php?c=products&m=detail&id=<?echo $p['id']?>"> <? echo $p['name_product']?></a> </h4>
-						<h6><u> <? echo $p['price']?> VND</u> </h6>
+						<h4><a href="index.php?c=products&m=viewOnetype&id=<?echo $p['id']?>&name=<? echo $p['name']?>"> <? echo $p['name']?></a> </h4>
+						
 					</div>
 					<div class="right-desc">
-						<a href="index.php?c=cart&m=add&id=<?echo $p['id']?>"><button class="btn2" type="submit"> Cho vào giỏ</button></a>
+						<a href="index.php?c=products&m=viewOnetype&id=<?echo $p['id']?>&name=<? echo $p['name']?>"><button class="btn2" type="submit"> Xem chi tiet</button></a>
 					</div>
 				</div>
 			</div>
