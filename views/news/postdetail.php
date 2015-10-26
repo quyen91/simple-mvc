@@ -2,7 +2,14 @@
 
 	<h1><?echo $p['title'];?></h1>
 	<h6>Author: <small> <?echo $p['author']; echo "<br>";?></small></h6>
-	<h6>Date post: <small> <?echo $p['time']; echo "<br><br><br>";?></small></h6>
+	<h6>Date post: <small> <?echo $p['time'];?></small></h6>
+	<h6>Tag: 
+	    <? foreach ($tag as $t) {?>
+	    	<a class="tag" href="index.php?c=news&m=getPostByTag&id=<?echo $t['id']?>"><?echo $t['name']; echo '&nbsp';?></a>
+	   <? }?>
+		
+	</h6>
+	<br><br><br>
 	<p><?echo $p['content'];?></p>
 
 	<div class="display_comments">

@@ -4,6 +4,7 @@ session_start();
 
 require 'db.php';
 require 'models/model.php';
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 function model($model) {
     static $models = array();

@@ -12,17 +12,18 @@
        <div class="right-item-news span8">
           <div class="title-item">
          <a href="index.php?c=news&m=detailpage&id=<?echo $p['ID']?>"><h5><? echo $p['title'];?></h5></a>
+         <p><small><?echo $p['time']?></small></p>
          </div>
          <div class="new-slogan span8">
-           <p><?echo $p['slogan']?></p>
-         </div>
-        
+           <p><?echo $p['slogan']?><br><a href="index.php?c=news&m=detailpage&id=<?echo $p['ID']?>">Chi tiết[...]</a></p>
+         </div>..
       </div>
        </div>
        <?php
      }
      ?>
    </div>
+   
 
 
 

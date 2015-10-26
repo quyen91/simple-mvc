@@ -33,7 +33,7 @@
 </table>
 <br>
 <p><form action="" method="post" class="form_update"><button type="submit" class="btn2"> Cập nhật</button></form></p>
-<p><a href="index.php?c=products&m=mainpage"><button type="button" class="btn2">Tiếp tục mua</button></a> </p>
+<p><a href="index.php?c=products&m=viewAlltype"><button type="button" class="btn2">Tiếp tục mua</button></a> </p>
 <p><a href="index.php?c=checkout&m=addnew"><button type="button" class="btn2" id="thanhtoan"> Thanh toán</button></a></p>
 <script>
 	function update_cart(o, id) {

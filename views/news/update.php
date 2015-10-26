@@ -22,12 +22,12 @@
 		<div class="right-update span8"><input type="text" name="slogan" value="<?echo $news[0]['slogan']?>"></div>
 	</div>
 	<div class="row span12">
-		<div class="left-update span4">Nội dung</div>
-		<div class="right-update span8"><textarea  name="content_" value=""><?echo $news[0]['content']?></textarea> </div>
+		<div class="left-update span4">Tags</div>
+		<div class="right-update span8"><input type="text" name="tag" value="<?echo $news[0]['tag']?>"></div>
 	</div>
 	<div class="row span12">
-		<div class="left-update span4">Thời gian</div>
-		<div class="right-update span8"><input type="text" name="time" value="<?echo $news[0]['time']?>"></div>
+		<div class="left-update span4">Nội dung</div>
+		<div class="right-update span8"><textarea  name="content_" value=""><?echo $news[0]['content']?></textarea> </div>
 	</div>
 	<div class="row span12">
 		<div class="left-update span4">Feature image</div>

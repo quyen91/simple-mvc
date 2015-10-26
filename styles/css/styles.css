@@ -1,6 +1,11 @@
-
+a{
+	text-decoration: none;
+}
 .item-news{
   float: left;
+  height:195px;
+  margin-bottom: 14px;
+  background-color:#F7F2F2;
 
 }
 .news-content {
@@ -89,5 +94,23 @@ span{
 }
 .pagination a{
 	padding:20px;
+}
+a.tag{
+	padding:5px;
+	background-color: blue;
+	font-size: 12px;
+	color: white ;
+	border-top-right-radius: 20%;
+	border-bottom-right-radius: 20%;
+
+	
+}
+.tag-ul li{
+	display: block;
+	float: left;
+	margin-right: 8px;
+	line-height: 20px;
+	padding: 8px;
+
 }
 

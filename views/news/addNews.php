@@ -22,12 +22,12 @@
 		<div class="right-update span8"><input type="text" name="slogan"></div>
 	</div>
 	<div class="row span12">
-		<div class="left-update span4">Nội dung</div>
-		<div class="right-update span8"><textarea  name="content_" ></textarea> </div>
+		<div class="left-update span4">Tags</div>
+		<div class="right-update span8"><input type="text" name="tag"></div>
 	</div>
 	<div class="row span12">
-		<div class="left-update span4">Thời gian</div>
-		<div class="right-update span8"><input type="datetime" name="time" placeholder="YYYY-MM-DD" ></div>
+		<div class="left-update span4">Nội dung</div>
+		<div class="right-update span8"><textarea  name="content_" ></textarea> </div>
 	</div>
 	<div class="row span12">
 		<div class="left-update span4">Thay đổi Feature img</div>

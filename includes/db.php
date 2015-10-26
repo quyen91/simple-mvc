@@ -53,7 +53,7 @@ function db_update($table, $data, $where) {
 
 
 function db_delete($table, $where) {
- $sql = "DELETE FROM `{$table}` WHERE {$where}";
+  $sql = "DELETE FROM `{$table}` WHERE {$where}";
     mysql_query($sql);
     
     return mysql_affected_rows();

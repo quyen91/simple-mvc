@@ -124,10 +124,17 @@ function admin_addproduct(){
 			$edit['title'] = $_POST['title'];
 			$edit['author'] = $_POST['author'];
 			$edit['content'] = $_POST['content_'];
-			$edit['time'] = $_POST['time'];
+			$edit['time'] = date("Y-m-d H:i:s");
 			$edit['slogan'] = $_POST['slogan'];
+			$edit['tag'] = $_POST['tag'];
+			//xoa bang post_tag where id=idpost
+			$temp_ = $_POST['ID'];
+			$where_ = "`post_id`=$temp_";
+			
+			//goi ham xu li tag
+			$t = model('news')->add_tag($_POST['ID'],$_POST['tag']);
 
-		//upload image
+			//upload image
 			if($_FILES['image']['name']==NULL){
 				$edit['figimage'] = $_POST['img-url'];
 			}else{
@@ -135,7 +142,7 @@ function admin_addproduct(){
 			move_uploaded_file($_FILES['image']['tmp_name'], $path);
 			$edit['figimage'] = "styles/img/news/".$_FILES['image']['name'];
 		}
-		//var_dump($edit);die();
+		
 		//update vao co so du lieu
 		$where = "`ID`= $id";
 		//var_dump($where);die();
@@ -154,9 +161,12 @@ function admin_addnews(){
 		$edit['title'] = $_POST['title'];
 		$edit['author'] = $_POST['author'];
 		$edit['content'] = $_POST['content_'];
-		$edit['time'] = $_POST['time'];
+		$edit['time'] = date('yy-mm-dd h:i:s');
 		$edit['slogan'] = $_POST['slogan'];
+		$edit['tag'] = $_POST['tag'];
 
+		//goi ham xu li tag
+		$t = model('news')->add_tag($_POST['ID'],$_POST['tag']);
 		//upload image
 
 			$path = 'styles/img/news/'.$_FILES['image']['name']; // Đường dẫn chưa file upload
