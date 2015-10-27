@@ -136,7 +136,7 @@ function admin_updateNews(){
 			$temp_ = $_POST['ID'];
 			$where_ = "`post_id`=$temp_";
 			
-			//goi ham xu li tag
+			db_delete('post_tag',$where_);
 			$t = model('news')->add_tag($_POST['ID'],$_POST['tag']);
 
 			//upload image

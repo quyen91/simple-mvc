@@ -27,13 +27,12 @@ class News extends Model
 
    }
    public function add_tag($idPost,$tag){
-      
+      $idTag=NULL;
       $arrTag = explode(",",$tag);
-      
       foreach ($arrTag as $t) {
-        $idTag = "";
         $t = trim($t);  //bo cac khoang trang
-        //query tag table
+        if($t != ""){ //truong hop k co tag
+           //query tag table
         $sql = "SELECT * FROM `{$this->table_tag}` where `name` = '$t'";
         $result = db_get_all($sql);
         if(count($result)==0){
@@ -53,8 +52,10 @@ class News extends Model
           'tag_id' => $idTag
         );
         db_insert('post_tag',$temp2);
+        }
+       
       }
-   }
+  }
    public function viewAlltag(){
        $sql = "SELECT * FROM `{$this->table_tag}`";
        return db_get_all($sql);

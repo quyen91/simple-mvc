@@ -39,13 +39,14 @@
 <div class="pagination">
 	<ul>
 		<?
+		if(count($product)>0){
 		$t = ceil(count($product_all)/2);
 		$name = $_GET['name']; //ten cua muc san pham
 		$type_ = $product_all[0]['type'];
 		for($i=1;$i<=$t;$i++){
 			echo "<li><a href='index.php?c=products&m=pagination&page=$i&type=$type_&name=$name'>$i</a></li>";
 		}
-
+} echo "Không có sản phẩm thuộc danh mục này";
 
 		?>
 	

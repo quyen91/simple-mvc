@@ -39,12 +39,12 @@
 <div class="pagination">
 	<ul>
 		<?
+		
 		$t = ceil(count($product)/2);
 		$type_ = $product[0]['type'];
 		for($i=1;$i<=$t;$i++){
 			echo "<li><a href='index.php?c=products&m=pagination&id=$i&type=$type_'>$i</a></li>";
 		}
-
 
 		?>
 	
