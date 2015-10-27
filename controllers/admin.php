@@ -1,14 +1,13 @@
 <?php
 function admin_products(){
-	//xay ra neu co hanh dong tu form xoa
-	if(isPostRequest()){
+	//check isAdmin
+	if(isAdmin()){
+		//xay ra neu co hanh dong tu form xoa
+		if(isPostRequest()){
 		$id= $_POST['id'];
 
 		admin_deleteProduct($id);
-	}
-
-	//check isAdmin
-	if(isAdmin()){
+		}
 		$data = array();
 		$data['product'] = model('products')->get_product();
 		$data['template_file'] = 'products/admin_sanpham.php';
@@ -17,6 +16,7 @@ function admin_products(){
 		$data['template_file'] = 'user/error.php';
 		render('layout.php', $data);
 	}
+	
 
 }
 function admin_updateProduct(){
@@ -88,7 +88,7 @@ function admin_addproduct(){
 	//$id = $_GET['id'];
 		$where = "`id`=$id";
 		db_delete('products',$where);
-		redirect('index.php?c=products&m=mainpage');
+		redirect('index.php?c=admin&m=products');
 
 	}
 	function admin_news(){
