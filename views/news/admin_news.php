@@ -16,7 +16,16 @@
 	   <td><?echo $p['slogan']?></td>
 	   <td><?echo $p['time']?></td>
 	   <td><img src="<?echo $p['figimage']?>" alt="" height="100" width="150"></td>
-	   <td><a href="index.php?c=admin&m=deleteNews&id=<?echo $p['ID']?>">Xóa</a><br> <a href="index.php?c=admin&m=updateNews&id=<?echo $p['ID']?>"> Sửa</a></td>
+
+		<td> <!-- tao action delete bang form -->
+	   <form action="" method="post">
+	   		<input type="hidden" name="id" value="<?echo $p['ID']?>">
+	   		<button type="submit" onclick='return confirm("Bạn muốn xóa sản phẩm này?");'> Xóa</button></a>
+	   </form>
+	   	 <!--/ tao action delete bang form -->
+
+	   <a href="index.php?c=admin&m=updateNews&id=<?echo $p['ID']?>"><button>Sửa</button></a>
+	   </td>
 	</tr>
 	<?}?>
 
