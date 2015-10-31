@@ -12,54 +12,78 @@
 	<br><br><br>
 	<p><?echo $p['content'];?></p>
 
-	<div class="display_comments">
 
-		<h3> <?echo count($comment)?> Comment</h3>
-
-		<? 	$i=0; foreach ($comment as $c) { ?>
-			<?if($i>=2) { ?>
-				<a href=""><strong> <u>Xem thêm</u>>>></strong></a>
-
-		<? break; }else{ ?>
-		
-				<div class="c-left">
-				<img src="styles/img/news/download.jpg" alt="">
-					<h4 style="color: red"><?echo $c['author']?></h4>
-					<p> <small><i><? echo $c['time']?></i></small></p>
-				</div>
-				<div class="c-right">
-					<p><? echo $c['content']?> </p> <hr/>
-				</div>
-				
-			
-
-
-		<?} $i++ ;} 	?>
-
-
-	</div>
 	<div class="get_comments">
 		<h3><small>Leave Comment</small></h3>
 
 
-		<form class="" action="" method="post">
+		<form id="cm" action="" method="post">
+		    <input type="hidden" name="id" class='hidden-id' value="<?echo $post[0]['ID']?>">
 			<label>Name</label>
 			<input type="text" name="name" value=""> <br>
 			<label> Mail</label>
 			<input type="text" name="email" value=""> <br>
 			<label> Comment</label>
 			<textarea name="comment" rows="2" cols="100"></textarea> <br>
-			<input id="but-comment" type="submit"  value="Đăng">
+			<!-- <input id="but-comment" type="submit"  value="Đăng"> -->
+			<button id ="submit" >Đăng</button>
 		</form>
 	</div>
 
+
+	<h3 ><span class="qty-cm"><?echo count($comment)?> </span>Comment</h3> <hr/>
+	<div class="display_comments">
+	
+	<? foreach ($comment as $c) {?>
+	<div class="item-cm">
+		<img src="styles/img/news/download.jpg" alt="">
+		<h4 style="color: red" class="author-cm"> <?echo $c['author']?> </h4>
+		<p class="content-cm"><?echo $c['content']?>  </p>
+		<p><i><?echo $c['time']?></i> </p> <hr/>
+	</div>
+		
+	<?}?>
+	
+	</div>
+	
 <? } ?>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$(#but-comment).onclick(function(){
-			alert("Cảm ơn bạn đã bình luận");
-		});
+<script>
+  
+  		$("#submit").click(function(e){
 
-	});
+  			var t = $('#cm').serialize();
+  			var h = t + "&id="+ <?echo $post[0]['ID']?>; // or + $('.hidden-id').val();
+  			
+  			$.ajax({
+				type: 'post',
+				url: 'index.php?c=news&m=test',
+				dataType: 'json',
+				data: h,
+				
+				success: function(data){
+					
+					var bien = '<div class="item-cm"><img src="styles/img/news/download.jpg" alt="">' + data['name']
+					+ data['comment'] + data['time'] + '</div>';
+					$('.display_comments').prepend(bien);
+
+					$('.qty-cm').html(data['qty_comment'] + " ");
+
+
+				},
+				error: function() {
+					alert('e');
+				},
+			
+		});
+  			
+				e.preventDefault();
+				$("#cm")[0].reset();
+
+
+  		});
+
+
+
+
 </script>

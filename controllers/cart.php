@@ -50,6 +50,7 @@ function cart_update(){
 	// 	$total+=$value['qty']*$value['price'];
 	// }
 	echo json_encode(array('qty' => $_POST['qty'], 'total' => $total));
+	
 }
 
  ?>

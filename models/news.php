@@ -22,7 +22,7 @@ class News extends Model
   	return db_insert($this->table_comment, $comment);
   }
    public function get_comments($id){
-    $sql = "SELECT * FROM `{$this->table_comment}` where `id_post`='$id'  order by `id` DESC limit 5" ;
+    $sql = "SELECT * FROM `{$this->table_comment}` where `id_post`='$id'  order by `id` DESC" ;
    	 return db_get_all($sql);
 
    }
