@@ -1,17 +1,13 @@
-
 <div class="product">
 	<div class="row span12 banner">
 		<img src="styles/img/product/banner_product.jpg" alt="">
 	</div>
 
-	<h3>Danh mục sản phẩm</h3> <hr></hr>
+	<h3>Danh mục sản phẩm</h3> <hr/>
 	<div class="main-product">
 		<div class="row span12">
-			<? $i=0; foreach ($product as $p) {?>
+			<?  foreach ($product as $p) {?>
 
-			<? if($i<2){
-
-			}?>
 			<div class="item-product span4">
 				<div class="feture-item">
 					<img src="<? echo $p['img']?>" alt="">
@@ -29,8 +25,8 @@
 			<?}?>
 		</div>
 	</div>
-</div>
 
+</div>
 
 <script type="text/javascript">
 	$('.main-nav li').removeClass('active');

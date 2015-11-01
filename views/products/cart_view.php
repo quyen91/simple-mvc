@@ -1,6 +1,6 @@
 <h1>Giỏ hàng của bạn</h1>
 
- <table border="1" style="width:60%">
+ <table border="1" style="width:60%" id='cart-table'>
   <tr>
     <td>ID</td>
     <td>Tên</td>
@@ -15,7 +15,7 @@
      <td><input type="number" onkeyup="update_cart(this, <?echo $cart[$i][0]['id'];?>);" name="quality" value="<?echo abs($cart[$i][0]['sl'])?>"/> 
      <br><span class="qty_"><?echo abs($cart[$i][0]['sl']);?></span></td>
     <td><?echo $cart[$i][0]['price'];?> <u>VND</u></td>
-    <td><a href="index.php?c=cart&m=deleteOne&id=<?echo $cart[$i][0]['id']?>">Xóa</a>
+    <td><a href="#" onclick="delete_oneCart(this,<?echo $cart[$i][0]['id'];?>)">Xóa</a>
     </td>
   </tr>
 
@@ -26,7 +26,7 @@
 <td colspan="3" rowspan="" headers="">
 <span class="total"><?echo $sum_money. " VND"; $_SESSION['total']=$sum_money?></span>
 </td>
-<td> <a href="index.php?c=cart&m=deleteAll">Xóa tất cả</a>
+<td> <a href="#" onclick="delete_AllCart(this)">Xóa tất cả</a>
 </td>
 </tr>
 
@@ -58,5 +58,58 @@
 				$('#thanhtoan').removeAttr('disabled');
 			}
 		});
+	}
+	function delete_oneCart(o,id) {
+		
+		$.ajax(
+		{
+			type: 'post',
+			url: 'index.php?c=cart&m=deleteOne',
+			dataType: 'json',
+			data:{
+				id: id
+			},
+			success: function(r){
+				alert('Đã xóa');
+				$(o).closest('tr').remove();
+				$('#cart_total').html(' (' +r.cart_total+ ')');
+				 document.getElementById("tableId").innerHTML = "";
+
+			},
+			error: function(){
+				alert('e');
+			},
+
+		}); //end ajax
+
+
+	}
+	function delete_AllCart(o) {
+		
+		$.ajax(
+		{
+			type: 'post',
+			url: 'index.php?c=cart&m=deleteAll',
+			dataType: 'text',
+
+			success: function(r){
+				alert('Xóa giỏ hàng');
+				var html = "";
+				html+= '<tr>';
+					html+= '<td> ID </td><td> Tên </td><td>Số lượng </td><td> Giá </td> <td></td>';
+				html += '</tr>';
+				html+= '<tr>';
+					html+= '<td> Tổng tiền</td> <td colspan="3"> 0 VND</td> <td width="126px"> </td>' ;
+				html += '</tr>';
+				$('#cart-table').html(html);
+				// document.getElementById("cart-table").innerHTML = "";
+				 $('#cart_total').html(' (0' + ')');
+				
+			},
+			error: function(){
+				alert('e');
+			},
+
+		}); //end ajax
 	}
 </script>

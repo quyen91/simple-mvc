@@ -38,7 +38,7 @@ function products_checkout(){
   }
 }
 function products_viewAlltype(){
-  $data = array();
+    $data = array();
     $data['product'] = model('products')->get_product_alltype();
     $data['template_file'] = 'products/alltype.php';
     render('layout.php', $data);
@@ -50,22 +50,20 @@ function products_viewOnetype(){
  
 
 
-  $data = array();
-   //var_dump($data['pagi']);die();
+    $data = array();
     $data['product'] = model('products')->get_product_bytype();
     $data['template_file'] = 'products/product_page.php';
     render('layout.php', $data);
 }
 function products_pagination(){
     $page = $_GET['page'];
-     $id = $_GET['type'];
+    $id = $_GET['type'];
     $where = "WHERE `type`=$id";
 
     $data['product'] = model('products')->paginate($page,2,$where);
     $data['product_all'] = model('products')->get_product_bytype();
-    //var_dump( $data['product_all']);die();
     $data['template_file'] = 'products/product_page.php';
     render('layout.php', $data);
   }
  ?>
-}
+

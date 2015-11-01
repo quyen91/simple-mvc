@@ -7,3 +7,4 @@ function index_index() {
     render('layout.php', $data);
 
 }
+

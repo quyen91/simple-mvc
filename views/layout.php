@@ -16,9 +16,9 @@
         <ul class="main-nav nav" id="menu">
             <li class="active" id="home"><a href="index.php">Trang chủ</a></li>
             <li id="news"><a href="index.php?c=news&m=mainpage">Tin tức</a></li>
-            <li id="products" ><a href="index.php?c=products&m=viewAlltype" >Sản phẩm <span class="caret"></span></a>
+            <li id="products"><a href="index.php?c=products&m=viewAlltype" >Sản phẩm </a></li>
                  
-            <li class="cart_nav"><a href="index.php?c=cart&m=view">Giỏ hàng(<?if(isset($_SESSION['cart'])) echo count($_SESSION['cart']); else echo 0;?>)</a> </li>
+            <li class="cart_nav"><a href="index.php?c=cart&m=view">Giỏ hàng <span id="cart_total">(<?if(isset($_SESSION['cart'])) echo count($_SESSION['cart']); else echo 0;?>)</span></a> </li>
         </ul>
       </div>
     </div>

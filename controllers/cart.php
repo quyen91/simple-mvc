@@ -5,10 +5,12 @@ function cart_view(){
 	  render('layout.php', $data);
 }
 function cart_add(){
-	$id = $_GET['id'];
-	//$price =$_GET['price'];
+   //su dung ajax de truyen du lieu
+   header('Content-Type: application/json');
+	//$id = $_GET['id'];
+   $id = $_POST['id'];
+
 	if(isset($_SESSION['cart'][$id])){
-	
 		$_SESSION['cart'][$id]['qty'] ++;
 		//$_SESSION['cart'][$id]['price'] = $price;
 	}
@@ -17,22 +19,30 @@ function cart_add(){
 		//$_SESSION['cart'][$id]['price'] = $price;
 
 	}
-	redirect('index.php?c=products&m=viewAlltype');
+	
+	//redirect('index.php?c=products&m=viewAlltype');
+	$total_cart = count($_SESSION['cart']);
+	echo json_encode(array('cart_total'=>$total_cart));
 
 }
 function cart_deleteAll(){
+
 	unset($_SESSION['cart']);
-	redirect('index.php?c=cart&m=view');
+	echo '0';
+
 }
 function cart_deleteOne(){
-	$id=$_GET['id'];
+	header('Content-Type: application/json');
+	$id=$_POST['id'];
 
 	foreach ($_SESSION['cart'] as $pro => $sl) {
 		if($pro==$id) {
 			unset($_SESSION['cart'][$id]);
 		}
 	}
-	redirect('index.php?c=cart&m=view');
+	//redirect('index.php?c=cart&m=view');
+	$total_cart = count($_SESSION['cart']);
+	echo json_encode(array('cart_total'=>$total_cart));
 }
 function cart_update(){
 

@@ -1,6 +1,31 @@
 a{
 	text-decoration: none;
 }
+/*danh cho phan login*/
+.form1{
+	height: 170px;
+	background: gray;
+	position: relative;
+	margin-left: 200px;
+	display: block;
+}
+.form1 .form-group{
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	margin-top: 20px;
+	padding-left: 30px;
+}
+.form-group .btn2{
+	background: green;
+	position: absolute;
+	margin-left: 0px;
+	
+}
+/*ket thuc phan login*/
+
+
+
 .item-news{
   float: left;
   height:195px;
@@ -25,12 +50,17 @@ a{
 	width: 860px;
 }
 .main-product .item-product{
-	height: 260px;
+	height:300px;
 	margin-bottom: 20px;
 	margin-left: 0;
 	margin-right: 10px;
 	display: block;
 	border-right: 0.1px solid rgb(231, 241, 237);
+}
+.item-product .desc{
+	display: block;
+	height: 100px;
+	background: gray;
 }
 
 .main-nav .cart-nav{
